@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guesser</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<!-- Ye onlaod kya karega ki init() function ko call karega Js se and jo game_arena pe jo div laga hpoga use disable bhi karega-->
+<body onload="init()"> 
+    <main>
+        <div id="font_page" class="center">
+            <div id="font_page_1">
+                <h3 class="center">Guess Random No Between 1-100</h1>
+                    <img src="./Images/icons8-portal-96.png" alt="" class="center">
+                    <h5 class="center">Select The Difficulty</h5>
+                    <div id="button_wrapper">
+                        <!-- Ab apan button  ko bol arhe he ki bhai easy attempts me click hua to uske relative class Js se call kar do
+                        ya hard me hua to uske relative classes pe call kar do -->
+                        <button class="center setter hover1" onclick="easyAttempts()">Easy:10 Chances</button>
+                        <button class="center setter hover1" onclick="hardAttempts()">Hard:5 Chances</button>
+                    </div>
+            </div>
+            <!-- Yaha jo div game_arena he usme basically next round ke liye process hona he-->
+            <div id="game_arena">
+                <div id="game_play">
+                    <button id="newGame"class="center setter hover1" onclick="newGameBegin()">New Game</button>
+                </div>
+                <section class="center">
+                    <h3 id="your_guess" class="padding_top padding_buttom">Your Guess</h3>
+                    <!-- On change me kya hota ki bhai key strokes leta har bar like 1 press kia 2 kia 3 kia asaa... -->
+                    <input type="number" id="inputBox" min="1" max="100" placeholder="Enter Your Number" onchange="compare()" />
+                </section>
+                <section class="stats">
+                    <div class="info">
+                        <p class="padding_top">Number of previous attempts
+                            <span id="attempts" class="painter"> 0 </span>
+                        </p>
+                    </div>
+                    <div class="info">
+                        <p class="padding_top">Number of previous guesses
+                            <span id="guesses" class="painter"> 0 </span>
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script src="./index.js"></script>
+</body>
+
+</html>
